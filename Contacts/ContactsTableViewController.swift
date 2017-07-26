@@ -53,7 +53,7 @@ class ContactsTableViewController: UIViewController {
         
         view.addSubview(tableView)
         tableView.fillSuperview()
-        tableView.rowHeight = 44
+        tableView.rowHeight = 60
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellId)
         
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>()
@@ -84,6 +84,10 @@ class ContactsTableViewController: UIViewController {
             .subscribe(onNext:  { contactViewModel in
                 let contactViewController = ContactViewController(viewModel: contactViewModel)
                 self.navigationController?.pushViewController(contactViewController, animated: true)
+                guard let selectedRow = self.tableView.indexPathForSelectedRow else {
+                    return
+                }
+                self.tableView.deselectRow(at: selectedRow, animated: true)
             })
             .disposed(by: disposeBag)
     }

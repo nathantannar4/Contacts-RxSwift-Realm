@@ -74,7 +74,7 @@ class ContactTableViewCell: UITableViewCell {
         addSubview(avatarView)
         addSubview(nameLabel)
         
-        avatarView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 44, heightConstant: 44)
+        avatarView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 60)
         nameLabel.anchor(topAnchor, left: avatarView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 10, bottomConstant: 2, rightConstant: 16, widthConstant: 0, heightConstant: 0)
     }
     
