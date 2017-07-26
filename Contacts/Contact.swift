@@ -29,9 +29,38 @@ import Foundation
 
 class Contact {
     
+    let id: Int
+    var avatarURL: String
+    var firstName: String
+    var lastName: String
+    var email: String
+    var gender: String
+    var birthday: Date
+    var address: String
+    var city: String
+    var state: String
+    var country: String
+    
     // MARK: - Initialization
     
-    init() {
-        
+//    init() {
+//        
+//    }
+    
+    init(fromJSON json: [String:Any]) {
+        self.id = json["id"] as! Int
+        self.avatarURL = json["avatar"] as! String
+        self.firstName = json["first_name"] as! String
+        self.lastName = json["last_name"] as! String
+        self.email = json["email"] as! String
+        self.gender = json["gender"] as! String
+        let dateString = json["birthday"] as! String
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        self.birthday = formatter.date(from: dateString)!
+        self.address = (json["street_number"] as! String) + " " + (json["address"] as! String)
+        self.city = json["city"] as! String
+        self.state = json["state"] as! String
+        self.country = json["country"] as! String
     }
 }

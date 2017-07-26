@@ -27,6 +27,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ContactViewModel {
     
@@ -34,10 +36,36 @@ class ContactViewModel {
     
     private let model: Contact
     
+    // MARK: - RxSwift
+    
+    private let disposeBag = DisposeBag()
+    
+    var firstName: BehaviorSubject<String>
+    var lastName: BehaviorSubject<String>
+    var avatarURL: BehaviorSubject<String>
+    
+    let handleError: ((_ error: Error) -> Void) = {
+        print($0)
+    }
+    
     // MARK: - Initialization
     
     init(model: Contact) {
         self.model = model
+        
+        firstName = BehaviorSubject<String>(value: model.firstName)
+        firstName.subscribe(onNext: {
+            model.firstName = $0
+        }, onError: handleError, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
+        
+        lastName = BehaviorSubject<String>(value: model.lastName)
+        lastName.subscribe(onNext: {
+            model.lastName = $0
+        }, onError: handleError, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
+        
+        avatarURL = BehaviorSubject<String>(value: model.avatarURL)
+        avatarURL.subscribe(onNext: {
+            model.avatarURL = $0
+        }, onError: handleError, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
     }
-    
 }

@@ -4,25 +4,40 @@ PODS:
   - Realm/Headers (2.8.3)
   - RealmSwift (2.8.3):
     - Realm (= 2.8.3)
-  - RxCocoa (3.5.0):
-    - RxSwift (~> 3.4)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxCoreData (0.3.1):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxDataSources (1.0.4):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxKeyboard (0.5.1):
+    - RxCocoa (>= 3.4)
+    - RxSwift (>= 3.4)
   - RxRealm (0.6.0):
     - RealmSwift (~> 2.5)
     - RxSwift (~> 3.2)
-  - RxSwift (3.5.0)
+  - RxSwift (3.6.1)
 
 DEPENDENCIES:
   - RxCocoa
+  - RxCoreData
+  - RxDataSources
+  - RxKeyboard
   - RxRealm
   - RxSwift
 
 SPEC CHECKSUMS:
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
-  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxCoreData: e8fbeaee6eab8b900a22ff4a677f099987adb429
+  RxDataSources: b3389acc5fe2eefb8fcd81a2b76a876ad08bc82a
+  RxKeyboard: bded7b486c447ccc82dc5296e156efc0d46b83e7
   RxRealm: 323de579b50b5e0f4a3e087d5925021f976ffaf1
-  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
-PODFILE CHECKSUM: f47fd1aa31d12a704fbc02d4f18f8e918b3fba07
+PODFILE CHECKSUM: 47e5c0fcbc3f054f1cf4b1de82562cda55d1a350
 
 COCOAPODS: 1.2.1

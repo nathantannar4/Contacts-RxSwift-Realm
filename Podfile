@@ -9,6 +9,9 @@ target 'Contacts' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxRealm'
+  pod 'RxDataSources'
+  pod 'RxKeyboard'
+  pod 'RxCoreData'
 
   target 'ContactsTests' do
     inherit! :search_paths

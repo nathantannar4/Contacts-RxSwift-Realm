@@ -46,6 +46,7 @@ class ContactViewManager: NSObject {
     }
 
     func viewDidLoad() {
+        view.backgroundColor = .white
     }
 
     func viewDidAppear(_ animated: Bool) {

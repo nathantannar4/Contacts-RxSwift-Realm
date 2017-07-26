@@ -29,6 +29,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxCoreData.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxDataSources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxKeyboard.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RxRealm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -41,6 +56,57 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>34B2529E616FA027CD90493E811DFD77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37B330E81B4F26C9DE715A6854863189</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3850D976CCBD9BD9E32F8831C4199F74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47C9D411722CBACF00244D881316E3AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>56BC0BEB204B155ADE4924BD99E31E7D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D912720A1F3BA3C6F33C47E53B9F0A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7356037FF4543DDF6B0FC728740FC97E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8114F3706ACC32BCA48787C21058F28F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C335BFF549B3B5DF3D5C8678810FEB46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C46F20D123AFC5110F1CEDA3F3F6C9F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
