@@ -30,19 +30,6 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct SectionOfCustomData {
-    var header: String
-    var items: [Item]
-}
-extension SectionOfCustomData: SectionModelType {
-    typealias Item = ContactViewModel
-    
-    init(original: SectionOfCustomData, items: [Item]) {
-        self = original
-        self.items = items
-    } 
-}
-
 class ContactsTableViewController: UIViewController {
     
     var contacts: Variable<[ContactViewModel]> = {
@@ -94,10 +81,23 @@ class ContactsTableViewController: UIViewController {
 
         tableView.rx
             .modelSelected(ContactViewModel.self)
-            .subscribe(onNext:  { value in
-                print("Tapped `\(value)`")
+            .subscribe(onNext:  { contactViewModel in
+                let contactViewController = ContactViewController(viewModel: contactViewModel)
+                self.navigationController?.pushViewController(contactViewController, animated: true)
             })
             .disposed(by: disposeBag)
     }
+}
+
+struct SectionOfCustomData {
+    var header: String
+    var items: [Item]
+}
+extension SectionOfCustomData: SectionModelType {
+    typealias Item = ContactViewModel
     
+    init(original: SectionOfCustomData, items: [Item]) {
+        self = original
+        self.items = items
+    }
 }

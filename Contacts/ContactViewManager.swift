@@ -34,6 +34,11 @@ class ContactViewManager: NSObject {
     
     var view: UIView! = UIView()
     private weak var viewController: ContactViewController?
+    
+    // MARK: - Subviews
+    
+    var avatarView: UIImageView = UIImageView()
+    var nameLabel: UILabel = UILabel()
 
     init(parentViewController: ContactViewController) {
         super.init()
@@ -47,6 +52,15 @@ class ContactViewManager: NSObject {
 
     func viewDidLoad() {
         view.backgroundColor = .white
+        
+        view.addSubview(avatarView)
+        view.addSubview(nameLabel)
+        
+        avatarView.anchorCenterSuperview()
+        avatarView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        avatarView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        nameLabel.anchor(avatarView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        nameLabel.textAlignment = .center
     }
 
     func viewDidAppear(_ animated: Bool) {

@@ -38,7 +38,6 @@ class ContactViewController: UIViewController {
     
     required init(viewModel: ContactViewModel) {
         super.init(nibName: nil, bundle: nil)
-        self.view = viewManager.view
         self.logicManager = ContactLogicManager(viewModel: viewModel, viewManager: viewManager)
     }
     
@@ -59,6 +58,7 @@ class ContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view = viewManager.view
         viewManager.viewDidLoad()
     }
 

@@ -26,13 +26,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ContactLogicManager: NSObject {
     
     // MARK: - MVVM
     
     private let viewModel: ContactViewModel
-    private weak var viewManager: ContactViewManager?
+    private weak var viewManager: ContactViewManager!
+    
+    // MARK: - RxSwift
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initialization
     
@@ -40,6 +46,32 @@ class ContactLogicManager: NSObject {
         self.viewModel = viewModel
         super.init()
         self.viewManager = viewManager
+        bindUItoViewModel()
     }
     
+    fileprivate func bindUItoViewModel() {
+        
+        Observable.combineLatest([viewModel.firstName, viewModel.lastName]) { (fullname) -> String in
+            return "\(fullname[0]) \(fullname[1])"
+            }
+            .bind(to: viewManager.nameLabel.rx.text).addDisposableTo(disposeBag)
+        
+        
+        let stringURL: String
+        do {
+            stringURL = try viewModel.avatarURL.value()
+        } catch _ {
+            return
+        }
+        guard let avatarURL = URL(string: stringURL) else {
+            return
+        }
+        
+        URLSession.shared.rx.data(request: URLRequest(url: avatarURL)).subscribe(onNext: { (data) in
+            DispatchQueue.main.async {
+                self.viewManager.avatarView.image = UIImage(data: data)
+                self.viewManager.avatarView.setNeedsLayout()
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).addDisposableTo(self.disposeBag)
+    }
 }
