@@ -53,6 +53,9 @@
 		385898901F28272B0021C9BA /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		385898921F282AF90021C9BA /* AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		385898941F2837180021C9BA /* MOCK_DATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MOCK_DATA.json; sourceTree = "<group>"; };
+		385898961F2843C50021C9BA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		385898971F2843C50021C9BA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		385898981F2987B50021C9BA /* MVVM Diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MVVM Diagram.png"; sourceTree = "<group>"; };
 		40DBF243C0EDD3AB6389FCFD /* Pods_ContactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		559352461DB642DB0C6F78D0 /* Pods-ContactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsTests/Pods-ContactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9EBCCE2938938AF3B358AA69 /* Pods-ContactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsTests/Pods-ContactsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		385898551F2817580021C9BA = {
 			isa = PBXGroup;
 			children = (
+				385898961F2843C50021C9BA /* LICENSE */,
+				385898971F2843C50021C9BA /* README.md */,
+				385898981F2987B50021C9BA /* MVVM Diagram.png */,
 				385898601F2817580021C9BA /* Contacts */,
 				385898721F2817580021C9BA /* ContactsTests */,
 				3858985F1F2817580021C9BA /* Products */,
